@@ -1,3 +1,4 @@
+import os
 import json
 import cv2
 import numpy
@@ -23,7 +24,7 @@ def facedetect(f):
     buf = numpy.fromstring(f.read(), dtype='int8')
     img = cv2.imdecode(buf, 1)
 
-    hc = cv2.CascadeClassifier("./upload_image/haarcascade_frontalface_alt.xml")
+    hc = cv2.CascadeClassifier(os.path.abspath(os.path.dirname(__file__)) + "/haarcascade_frontalface_alt.xml")
     faces = hc.detectMultiScale(img, minSize=(50,50))
     if len(faces):
         faces = faces.tolist()
