@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <title>画像ファイルをアップロードする雛形</title>
+        <meta charset="UTF-8">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="{{STATIC_URL}}upload_image/dropzone.js"></script>
+        <script src="{{STATIC_URL}}upload_image/upload_image.js"></script>
+        <link rel="stylesheet" href="{{STATIC_URL}}upload_image/style.css" type="text/css">
+    </head>
+
+    <body>
+        <h1>画像ファイルをアップロードする雛形</h1>
+
+        <p>フロントエンド: jQuery, dropzone.js</p>
+        <p>バックエンド: Django, OpenCV</p>
+
+        <form id="dropzone">
+            画像ファイルをアップロード
+            {% csrf_token %}
+        </form>
+
+        <canvas id="canvas"></canvas>
+    </body>
+
+</html>
